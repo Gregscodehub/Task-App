@@ -38,8 +38,8 @@
 }
 
 .form-control {
-  margin:0;
-  padding:0;
+  margin:10px 0;
+  padding:0 0 0 10px;
 }
 
 .d-flex {

@@ -27,6 +27,15 @@ body {
   border:none;
 }
 
+input[name="title"], input[name="day"] {
+  border:1px solid #ccc;
+}
+
+.form-control input[name="day"] {
+  margin-left:0;
+  margin-right:0;
+}
+
 .form-control label {
   display: block;
 }

@@ -1,7 +1,11 @@
 <div class="task" [ngClass]="{reminder: task.completed }">
-  <div>
-    <h3>{{ task.title }}<app-button color="btn btn-dark" text="Edit" (click)="open(mymodal)"></app-button></h3>
-    <p>{{ task.day }}</p>
+  <div class="w-100 mt-3">
+    <app-button class="float-end" color="btn btn-dark" text="Edit" (click)="open(mymodal)"></app-button>
+    <div>
+      <h3>{{ task.title }}</h3>
+      <fa-icon class="float-start me-3" [icon]="faCalendar"></fa-icon><p>{{ task.day }}</p>
+      <fa-icon class="float-end me-3" [ngStyle]="{color: 'red'}" [icon]="faTimes" (click)="removeTask(task)"></fa-icon>
+    </div>
   </div>
  </div>
  <ng-template #mymodal let-modal>
@@ -14,7 +18,7 @@
   <div class="modal-body">
     <form #myForm="ngForm" class="add-form">
       <div class="form-control">
-        <label for="title">{{task.title}}</label>
+        <label for="title" class="text-muted p-0 m-0"><b>{{editedTitle}}</b></label>
         <input type="text" class="form-control" id="title"
                required
                [(ngModel)]="editedTitle" 
@@ -27,7 +31,7 @@
         </div>
       </div>
       <div class="form-control">
-        <label for="text">{{ task.day }}</label>
+        <label for="text" class="text-muted p-0 m-0"><b>{{ editedDay }}</b></label>
         <input 
           type="text" 
           name="day" 

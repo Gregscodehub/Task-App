@@ -1,8 +1,12 @@
-import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from 'src/task.model';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TaskService} from 'src/app/services/task.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-task-item',
   templateUrl: './task-item.component.html',
@@ -15,11 +19,12 @@ export class TaskItemComponent {
   editedTitle!: string;
   editedDay!:  string;
   editedReminder: boolean = false;
-  
+  faTimes = faTimes;
+  faCalendar = faCalendar;
+
   @Input() task!: Task;
   @Output() updateTask = new EventEmitter<Task>();
-  // @ViewChild('myForm') myForm: NgForm;
-  
+  @Output() onDeleteTask = new EventEmitter<Task>();
 
   ngOnInit(): void {
     // console.log(this.task);
@@ -29,7 +34,7 @@ export class TaskItemComponent {
     // console.log(this.editedTitle, this.editedDay, this.editedReminder)
   }
 
-  constructor(private taskService: TaskService, private modalService: NgbModal){}
+  constructor(private taskService: TaskService, private modalService: NgbModal, private router:Router){}
 
   open(content:any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -54,22 +59,16 @@ export class TaskItemComponent {
     this.task.day = this.editedDay ? this.editedDay : this.task.day;
     this.task.completed = this.editedReminder ? this.editedReminder : this.task.completed;
     this.taskService.updateTask(this.task).subscribe();
+    this.modalService.dismissAll();
   }
 
-  // onSubmit() {
-  //   if(this.myForm.valid) {
-  //     this.task.title = this.editedTitle;
+  // saveTask() {
+  //   this.task.title = this.editedTitle;
   //   this.task.day = this.editedDay;
   //   this.task.completed = this.editedReminder;
-  //   } else {
-  //     alert('no')
-  //   }
   // }
 
-  saveTask() {
-    this.task.title = this.editedTitle;
-    this.task.day = this.editedDay;
-    this.task.completed = this.editedReminder;
+  removeTask(task: Task) {
+    this.onDeleteTask.emit(task);
   }
-
 }

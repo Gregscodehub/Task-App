@@ -3,24 +3,19 @@
     {
       "id": 1,
       "completed": true,
-      "title": "Feed The dogs",
-      "day": "May 5th at 2:30pm"
+      "title": "Feed The chickens",
+      "day": "Tomorrow: 3:00 PM EST"
     },
     {
       "id": 2,
-      "title": "Hello again",
+      "title": "Hello again!",
       "day": "Monday 4th, 2023",
-      "completed": false
+      "completed": true
     },
     {
       "id": 3,
-      "title": "Food Shopping",
+      "title": "Food Shopping for Groceriess",
       "day": "May 7th at 12:30pm",
-      "completed": false
-    },
-    {
-      "id": 4,
-      "title": "Eat some dinner",
       "completed": false
     },
     {
@@ -28,6 +23,33 @@
       "title": "Task is complete bonehead",
       "day": "May 7th at 12:30pm",
       "completed": false
+    },
+    {
+      "title": "Workout",
+      "day": "",
+      "id": 6
+    },
+    {
+      "title": "Workout at Gym",
+      "day": "June 22, 2023",
+      "completed": true,
+      "id": 7
+    },
+    {
+      "title": "Build a website",
+      "day": "September 3, 2023",
+      "id": 8
+    },
+    {
+      "title": "Go to the park",
+      "day": "Afternoon of the 4th",
+      "completed": true,
+      "id": 9
+    },
+    {
+      "title": "Buy a new car",
+      "day": "Today!!!",
+      "id": 10
     }
   ]
 }

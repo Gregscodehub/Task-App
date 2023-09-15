@@ -1,8 +1,10 @@
 <header class="d-flex align-items-center justify-content-between">
   <h1 class="mb-3">{{title}}</h1>
   <app-button 
-    text="Add Task"   
-    color="btn btn-success" 
-    class="btn">
+    *ngIf="hasRoute('/')"  
+    class="btn"
+    color="{{ showAddTask ? 'btn-warning' : 'btn-success' }}" 
+    text="{{ showAddTask ? 'Close' : 'Add' }}"
+    (btnClick)="toggleAddTask()">
   </app-button>
 </header>
