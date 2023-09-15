@@ -1,0 +1,13 @@
+<div class="modal">
+  <h2>Edit Task</h2>
+  <form>
+    <!-- Input fields for task properties -->
+    <label for="title">Title</label>
+    <input id="title" type="text" [(ngModel)]="task.title" />
+
+    <!-- Add input fields for other task properties (day, completed, icon, etc.) -->
+
+    <button (click)="onSaveClick()">Save</button>
+    <button (click)="onCancelClick()">Cancel</button>
+  </form>
+</div>

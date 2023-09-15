@@ -1,0 +1,49 @@
+<div class="task" [ngClass]="{reminder: task.completed }">
+  <div>
+    <h3>{{ task.title }}<app-button color="btn btn-dark" text="Edit" (click)="open(mymodal)"></app-button></h3>
+    <p>{{ task.day }}</p>
+  </div>
+ </div>
+ <ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Edit Task</h4>
+    <app-button type="button" color="btn-dark" text="x" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </app-button>
+  </div>
+  <div class="modal-body">
+    <form #myForm="ngForm" class="add-form">
+      <div class="form-control">
+        <label for="title">{{task.title}}</label>
+        <input type="text" class="form-control" id="title"
+               required
+               [(ngModel)]="editedTitle" 
+               name="title"
+               minlength="3" 
+               #title="ngModel">
+        <div [hidden]="title.valid || title.pristine"
+             class="alert alert-danger">
+          Title is required
+        </div>
+      </div>
+      <div class="form-control">
+        <label for="text">{{ task.day }}</label>
+        <input 
+          type="text" 
+          name="day" 
+          required
+          minlength="5" 
+          [(ngModel)]="editedDay" 
+          placeholder="Edit Day & Time" />
+      </div>
+      <div class="form-control form-control-check">
+        <label for="text">Edit Reminder</label>
+        <input type="checkbox" name="Reminder" [(ngModel)]="editedReminder" />
+      </div>
+      <input type="submit" value="Save Task" class="btn btn-success" [disabled]="!myForm.valid" (click)="editTask(task)">
+    </form>
+  </div>
+  <div class="modal-footer">
+    <app-button type="button" color="btn-outline-dark" text="Ok" (click)="modal.close('Save click')"></app-button>
+  </div>
+</ng-template>

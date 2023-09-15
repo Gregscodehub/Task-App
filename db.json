@@ -1,0 +1,33 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "completed": true,
+      "title": "Feed The dogs",
+      "day": "May 5th at 2:30pm"
+    },
+    {
+      "id": 2,
+      "title": "Hello again",
+      "day": "Monday 4th, 2023",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Food Shopping",
+      "day": "May 7th at 12:30pm",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "title": "Eat some dinner",
+      "completed": false
+    },
+    {
+      "id": 5,
+      "title": "Task is complete bonehead",
+      "day": "May 7th at 12:30pm",
+      "completed": false
+    }
+  ]
+}
