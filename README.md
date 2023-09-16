@@ -25,3 +25,33 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+**Note:** This app is intended for educational purposes only and should not be deployed to any production server.
+
+1. ## Clone this repository to your local machine:
+   bash
+   git clone https://github.com/your-username/your-repo.git
+
+2. ## Navigate to the project directory:
+	cd your-repo
+
+3. ## Install the required dependencies:
+	npm install
+
+4. ## Install JSON-Server globally (if not already installed):
+	npm install -g json-server
+
+5. ## Start JSON-Server to serve the app's mock API:
+	json-server --watch db.json --port 3000
+## This will start the mock API server on port 3000.
+
+6. ## Start the Angular development server:
+ng serve
+
+The app will be accessible at http://localhost:4200/ in your web browser.
+
+Explore the demonstration app and experiment with its features.
+
+When you are finished, stop both the JSON-Server and Angular development server.
+
+Optionally, you can contribute to the project or provide feedback by opening issues or pull requests on the GitHub repository.
