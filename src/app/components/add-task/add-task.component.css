@@ -1,3 +1,7 @@
 .add-form {
   margin-bottom:40px;
 }
+
+.form-container {
+  max-width:550px;
+}

@@ -10,21 +10,18 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background:#000;
 }
 
 .container {
-  max-width: 500px;
-  margin: 30px auto;
+/*  max-width: 550px;*/
+  margin: 10px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  border: 1px solid white;
   padding: 30px;
   border-radius: 5px;
-}
-
-.form-control {
-  margin: 20px 0;
-  border:none;
+  background:#333;
 }
 
 input[name="title"], input[name="day"] {
@@ -51,7 +48,6 @@ input[name="title"], input[name="day"] {
 .form-control-check {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .form-control-check label {

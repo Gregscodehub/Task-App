@@ -5,7 +5,9 @@ import { TaskService} from 'src/app/services/task.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar } from '@fortawesome/free-regular-svg-icons';
+import { faEdit } from '@fortawesome/free-regular-svg-icons';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-task-item',
@@ -18,9 +20,11 @@ export class TaskItemComponent {
   id!: number;
   editedTitle!: string;
   editedDay!:  string;
-  editedReminder: boolean = false;
+  editedReminder!: boolean;
   faTimes = faTimes;
+  faEdit = faEdit;
   faCalendar = faCalendar;
+  faCheck = faCheck;
 
   @Input() task!: Task;
   @Output() updateTask = new EventEmitter<Task>();
@@ -55,18 +59,12 @@ export class TaskItemComponent {
   }
 
   editTask(task: Task) {
-    this.task.title = this.editedTitle ? this.editedTitle : this.task.title;
-    this.task.day = this.editedDay ? this.editedDay : this.task.day;
-    this.task.completed = this.editedReminder ? this.editedReminder : this.task.completed;
+    this.task.title = this.editedTitle;
+    this.task.day = this.editedDay;
+    this.task.completed = this.editedReminder;
     this.taskService.updateTask(this.task).subscribe();
     this.modalService.dismissAll();
   }
-
-  // saveTask() {
-  //   this.task.title = this.editedTitle;
-  //   this.task.day = this.editedDay;
-  //   this.task.completed = this.editedReminder;
-  // }
 
   removeTask(task: Task) {
     this.onDeleteTask.emit(task);

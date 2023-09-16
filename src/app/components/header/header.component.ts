@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 
 export class HeaderComponent {
-  title: string = 'Task app';
+  title: string = 'Task Tracker';
   showAddTask!:boolean;
   subscription!: Subscription;
 

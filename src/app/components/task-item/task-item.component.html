@@ -1,28 +1,35 @@
-<div class="task" [ngClass]="{reminder: task.completed }">
-  <div class="w-100 mt-3">
-    <app-button class="float-end" color="btn btn-dark" text="Edit" (click)="open(mymodal)"></app-button>
+<div class="task" [ngClass]="{reminder: task.completed }" (click)="open(mymodal)">
+  <div class="d-flex w-100 mt-3 mt-4">
     <div>
-      <h3>{{ task.title }}</h3>
-      <fa-icon class="float-start me-3" [icon]="faCalendar"></fa-icon><p>{{ task.day }}</p>
-      <fa-icon class="float-end me-3" [ngStyle]="{color: 'red'}" [icon]="faTimes" (click)="removeTask(task)"></fa-icon>
+      <h3 class="mb-1">{{ task.title }}</h3>
+      <fa-icon class="float-start me-3" [icon]="faCalendar"></fa-icon><p class="d-lg-inline-block">{{ task.day }}</p>
+      <!-- <fa-icon class="float-end me-3" [ngStyle]="{color: 'red'}" [icon]="faTimes" (click)="removeTask(task)"></fa-icon> -->
+    </div>
+    <div class="d-flex flex-column ms-auto">
+      <app-button class="mb-2"  color="btn btn-outline-light px-3 btn-sm" text="Edit" ></app-button>
+      <app-button class="mb-2" color="btn btn-outline-danger btn-sm" text="Delete" (click)="removeTask(task)"></app-button>
     </div>
   </div>
  </div>
  <ng-template #mymodal let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">Edit Task</h4>
-    <app-button type="button" color="btn-dark" text="x" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <app-button type="button" color="btn-light" text="x" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">×</span>
     </app-button>
   </div>
   <div class="modal-body">
     <form #myForm="ngForm" class="add-form">
-      <div class="form-control">
-        <label for="title" class="text-muted p-0 m-0"><b>{{editedTitle}}</b></label>
-        <input type="text" class="form-control" id="title"
+      <div class="form-control p-2 border-0">
+        <fa-icon class="float-start me-3" [icon]="faEdit"></fa-icon>
+        <label for="editedTitle" class="text-muted tex p-0 m-0"><b>Task:</b>
+        </label>
+        <input 
+               type="text" 
                required
                [(ngModel)]="editedTitle" 
                name="title"
+               id="editedTitle"
                minlength="3" 
                #title="ngModel">
         <div [hidden]="title.valid || title.pristine"
@@ -30,24 +37,31 @@
           Title is required
         </div>
       </div>
-      <div class="form-control">
-        <label for="text" class="text-muted p-0 m-0"><b>{{ editedDay }}</b></label>
+      <div class="form-control p-2 border-0">
+        <fa-icon class="float-start me-3" [icon]="faCalendar"></fa-icon>
+        <label for="editedDay" class="text-muted p-0 m-0"><b>Day:</b></label>
         <input 
           type="text" 
           name="day" 
+          id="editedDay"
           required
           minlength="5" 
           [(ngModel)]="editedDay" 
           placeholder="Edit Day & Time" />
+        <div [hidden]="title.valid || title.pristine"
+             class="alert alert-danger">
+          Title is required
+        </div>
       </div>
-      <div class="form-control form-control-check">
-        <label for="text">Edit Reminder</label>
-        <input type="checkbox" name="Reminder" [(ngModel)]="editedReminder" />
+      <div class="form-control form-control-check p-2 border-0">
+        <fa-icon class="float-start me-3" [icon]="faCheck"></fa-icon>
+        <label for="editedReminder">Edit Reminder</label>
+        <input type="checkbox" id="editedReminder" name="Reminder" [(ngModel)]="editedReminder" />
       </div>
-      <input type="submit" value="Save Task" class="btn btn-success" [disabled]="!myForm.valid" (click)="editTask(task)">
+      <input type="submit" value="Save Task" class="btn btn-success btn-block w-100" [disabled]="!myForm.valid" (click)="editTask(task)">
     </form>
   </div>
   <div class="modal-footer">
-    <app-button type="button" color="btn-outline-dark" text="Ok" (click)="modal.close('Save click')"></app-button>
+    <app-button type="button" color="btn-light" text="Ok" (click)="modal.close('Save click')"></app-button>
   </div>
 </ng-template>

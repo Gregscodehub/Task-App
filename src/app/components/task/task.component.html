@@ -1,9 +1,9 @@
 <!-- task.component.html -->
   <app-add-task (onAddTask)="addTask($event)"></app-add-task>
   <app-task-item
-    *ngFor="let task of tasks"
+    *ngFor="let task of tasks | taskSort"
     [task]="task"
-    class="task-item"
+    class="task-item col-md-4"
     (onDeleteTask)="deleteTask(task)"
   >
   </app-task-item>

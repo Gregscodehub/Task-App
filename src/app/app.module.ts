@@ -12,6 +12,8 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
 import { ButtonComponent } from './components/button/button.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterComponent } from './components/footer/footer.component';
+import { TaskSortPipe } from './task-sort.pipe';
 
 const appRoutes: Routes = [
   { path: 'tasks', component: TaskComponent},
@@ -25,6 +27,8 @@ const appRoutes: Routes = [
     TaskItemComponent,
     ButtonComponent,
     AddTaskComponent,
+    FooterComponent,
+    TaskSortPipe,
   ],
   imports: [
     BrowserModule,
@@ -37,4 +41,4 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

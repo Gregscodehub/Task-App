@@ -3,12 +3,12 @@
     {
       "id": 1,
       "completed": true,
-      "title": "Feed The chickens",
-      "day": "Tomorrow: 3:00 PM EST"
+      "title": "Feed The chickens at the farm around the corner",
+      "day": "June 22, 2023"
     },
     {
       "id": 2,
-      "title": "Hello again!",
+      "title": "Hello again!!",
       "day": "Monday 4th, 2023",
       "completed": true
     },
@@ -22,12 +22,7 @@
       "id": 5,
       "title": "Task is complete bonehead",
       "day": "May 7th at 12:30pm",
-      "completed": false
-    },
-    {
-      "title": "Workout",
-      "day": "",
-      "id": 6
+      "completed": true
     },
     {
       "title": "Workout at Gym",
@@ -43,13 +38,24 @@
     {
       "title": "Go to the park",
       "day": "Afternoon of the 4th",
-      "completed": true,
+      "completed": false,
       "id": 9
     },
     {
       "title": "Buy a new car",
       "day": "Today!!!",
       "id": 10
+    },
+    {
+      "title": "Go to the game",
+      "day": "Friday the 13th",
+      "completed": true,
+      "id": 11
+    },
+    {
+      "title": "Go surfing",
+      "day": "June 22, 2023",
+      "id": 12
     }
   ]
 }
