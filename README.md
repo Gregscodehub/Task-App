@@ -43,9 +43,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 5. ## Start JSON-Server to serve the app's mock API:
 	json-server --watch db.json --port 3000
-## This will start the mock API server on port 3000.
+6. ## This will start the mock API server on port 3000.
 
-6. ## Start the Angular development server:
+7. ## Start the Angular development server:
 ng serve
 
 The app will be accessible at http://localhost:4200/ in your web browser.
