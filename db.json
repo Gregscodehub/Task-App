@@ -15,7 +15,7 @@
     {
       "title": "Go to the park",
       "day": "Afternoon of the 4th",
-      "completed": true,
+      "completed": false,
       "id": 9
     },
     {
@@ -33,7 +33,8 @@
     {
       "title": "Build a cool app",
       "day": "September 16, 2023",
-      "id": 14
+      "id": 14,
+      "completed": false
     },
     {
       "title": "Build a snowman",
