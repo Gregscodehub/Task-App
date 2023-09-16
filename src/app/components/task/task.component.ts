@@ -46,8 +46,8 @@ export class TaskComponent {
     task.title = task.title;
     task.day = task.day;
     task.completed = task.completed;
-    this.taskService.updateTask(task).subscribe();
     this.sortTasks();
+    this.taskService.updateTask(task).subscribe();
   }
 
   deleteTask(task:Task) {

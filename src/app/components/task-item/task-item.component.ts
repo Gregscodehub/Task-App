@@ -71,12 +71,4 @@ export class TaskItemComponent {
     this.onDeleteTask.emit(task);
   }
 
-  updateValue() {
-    console.log(this.checkboxValue);
-    if (this.checkboxValue === 1) {
-      this.checkboxValue = -1;
-    } else {
-      this.checkboxValue = 1;
-    }
-  }
 }

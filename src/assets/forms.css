@@ -2,6 +2,6 @@
   border-left: 10px solid #42A948; /* green */
 }
 
-.ng-invalid:not(form)  {
+.ng-invalid.ng-pristine:not(form), .ng-invalid.ng-touched:not(form), .ng-invalid.ng-dirty:not(form)  {
   border-left: 10px solid #a94442; /* red */
 }

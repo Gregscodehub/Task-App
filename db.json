@@ -1,33 +1,9 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "completed": false,
-      "title": "Feed The chickens at the farm around the corner",
-      "day": "June 22, 2023"
-    },
-    {
-      "id": 2,
-      "title": "Hello again!!",
-      "day": "Monday 4th, 2023",
-      "completed": false
-    },
-    {
-      "id": 3,
-      "title": "Food Shopping for Groceriess",
-      "day": "May 7th at 12:30pm",
-      "completed": true
-    },
-    {
-      "id": 5,
-      "title": "Task is complete bonehead",
-      "day": "May 7th at 12:30pm",
-      "completed": true
-    },
-    {
       "title": "Workout at Gym",
       "day": "June 22, 2023",
-      "completed": true,
+      "completed": false,
       "id": 7
     },
     {
@@ -43,26 +19,26 @@
       "id": 9
     },
     {
-      "title": "Buy a new car",
-      "day": "Today!!!",
-      "id": 10
-    },
-    {
       "title": "Go to the game",
       "day": "Friday the 13th",
       "completed": true,
       "id": 11
     },
     {
-      "title": "Go surfing",
-      "day": "June 22, 2023",
-      "id": 12
-    },
-    {
       "title": "Go Fishing",
       "day": "Today!",
       "id": 13,
       "completed": true
+    },
+    {
+      "title": "Build a cool app",
+      "day": "September 16, 2023",
+      "id": 14
+    },
+    {
+      "title": "Build a snowman",
+      "day": "December 25, 2023",
+      "id": 15
     }
   ]
 }

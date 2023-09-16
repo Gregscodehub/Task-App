@@ -1,4 +1,4 @@
-<div class="task" [ngClass]="{reminder: task.completed }" (click)="open(mymodal)">
+<div class="task" [ngClass]="{reminder: task.completed }">
   <div class="d-flex w-100 mt-3 mt-4">
     <div>
       <h3 class="mb-1">{{ task.title }}</h3>
@@ -6,8 +6,8 @@
       <!-- <fa-icon class="float-end me-3" [ngStyle]="{color: 'red'}" [icon]="faTimes" (click)="removeTask(task)"></fa-icon> -->
     </div>
     <div class="d-flex flex-column ms-auto">
-      <app-button class="mb-2"  color="btn btn-outline-light px-3 btn-sm" text="Edit" ></app-button>
-      <app-button class="mb-2" color="btn btn-outline-danger btn-sm" text="Delete" (click)="removeTask(task)"></app-button>
+      <app-button class="mb-2"  color="btn btn-outline-light px-3 btn-sm" text="Edit" (click)="open(mymodal)"></app-button>
+      <app-button class="mb-2 delete-btn" color="btn btn-outline-danger btn-sm" text="Delete" (click)="open(mydeletemodal)"></app-button>
     </div>
   </div>
  </div>
@@ -32,10 +32,6 @@
                id="editedTitle"
                minlength="3" 
                #title="ngModel">
-        <div [hidden]="title.valid || title.pristine"
-             class="alert alert-danger">
-          Title is required
-        </div>
       </div>
       <div class="form-control p-2 border-0">
         <fa-icon class="float-start me-3" [icon]="faCalendar"></fa-icon>
@@ -48,14 +44,10 @@
           minlength="5" 
           [(ngModel)]="editedDay" 
           placeholder="Edit Day & Time" />
-        <div [hidden]="title.valid || title.pristine"
-             class="alert alert-danger">
-          Title is required
-        </div>
       </div>
       <div class="form-control form-control-check p-2 border-0">
         <fa-icon class="float-start me-3" [icon]="faCheck"></fa-icon>
-        <label for="editedCompleted">Edit Reminder</label>
+        <label for="editedCompleted">Complete?</label>
         <input type="checkbox" id="editedCompleted" name="completed" [(ngModel)]="editedCompleted" />
       </div>
       <input type="submit" value="Save Task" class="btn btn-success btn-block w-100" [disabled]="!myForm.valid" (click)="editTask(task)">
@@ -65,3 +57,29 @@
     <app-button type="button" color="btn-light" text="Ok" (click)="modal.close('Save click')"></app-button>
   </div>
 </ng-template>
+
+<ng-template #mydeletemodal let-modal>
+  <div class="modal-header">
+      <h4 class="modal-title" id="modal-title">Task deletion</h4>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close button"
+        aria-describedby="modal-title"
+        (click)="modal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <p>
+        <strong>Are you sure you want to delete <span class="text-primary">{{task.title}}</span></strong>
+      </p>
+      <p>
+        <span class="text-danger">This operation can not be undone.</span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+      <button type="button" ngbAutofocus class="btn btn-danger" (click)="removeTask(task)">Ok</button>
+    </div>
+</ng-template>
+
