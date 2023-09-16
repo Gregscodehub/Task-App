@@ -30,7 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 1. ## Clone this repository to your local machine:
    bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/Gregscodehub/Task-App.git
 
 2. ## Navigate to the project directory:
 	cd your-repo
