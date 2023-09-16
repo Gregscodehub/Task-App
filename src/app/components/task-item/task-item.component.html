@@ -55,8 +55,8 @@
       </div>
       <div class="form-control form-control-check p-2 border-0">
         <fa-icon class="float-start me-3" [icon]="faCheck"></fa-icon>
-        <label for="editedReminder">Edit Reminder</label>
-        <input type="checkbox" id="editedReminder" name="Reminder" [(ngModel)]="editedReminder" />
+        <label for="editedCompleted">Edit Reminder</label>
+        <input type="checkbox" id="editedCompleted" name="completed" [(ngModel)]="editedCompleted" />
       </div>
       <input type="submit" value="Save Task" class="btn btn-success btn-block w-100" [disabled]="!myForm.valid" (click)="editTask(task)">
     </form>

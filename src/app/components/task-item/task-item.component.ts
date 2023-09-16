@@ -20,11 +20,12 @@ export class TaskItemComponent {
   id!: number;
   editedTitle!: string;
   editedDay!:  string;
-  editedReminder!: boolean;
+  editedCompleted!: boolean;
   faTimes = faTimes;
   faEdit = faEdit;
   faCalendar = faCalendar;
   faCheck = faCheck;
+  checkboxValue!: number;
 
   @Input() task!: Task;
   @Output() updateTask = new EventEmitter<Task>();
@@ -34,7 +35,7 @@ export class TaskItemComponent {
     // console.log(this.task);
     this.editedTitle = this.task.title;
     this.editedDay = this.task.day;
-    this.editedReminder = this.task.completed;
+    this.editedCompleted = this.task.completed;
     // console.log(this.editedTitle, this.editedDay, this.editedReminder)
   }
 
@@ -61,12 +62,21 @@ export class TaskItemComponent {
   editTask(task: Task) {
     this.task.title = this.editedTitle;
     this.task.day = this.editedDay;
-    this.task.completed = this.editedReminder;
+    this.task.completed = this.editedCompleted;
     this.taskService.updateTask(this.task).subscribe();
     this.modalService.dismissAll();
   }
 
   removeTask(task: Task) {
     this.onDeleteTask.emit(task);
+  }
+
+  updateValue() {
+    console.log(this.checkboxValue);
+    if (this.checkboxValue === 1) {
+      this.checkboxValue = -1;
+    } else {
+      this.checkboxValue = 1;
+    }
   }
 }

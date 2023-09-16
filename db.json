@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": 1,
-      "completed": true,
+      "completed": false,
       "title": "Feed The chickens at the farm around the corner",
       "day": "June 22, 2023"
     },
@@ -10,13 +10,13 @@
       "id": 2,
       "title": "Hello again!!",
       "day": "Monday 4th, 2023",
-      "completed": true
+      "completed": false
     },
     {
       "id": 3,
       "title": "Food Shopping for Groceriess",
       "day": "May 7th at 12:30pm",
-      "completed": false
+      "completed": true
     },
     {
       "id": 5,
@@ -33,12 +33,13 @@
     {
       "title": "Build a website",
       "day": "September 3, 2023",
-      "id": 8
+      "id": 8,
+      "completed": true
     },
     {
       "title": "Go to the park",
       "day": "Afternoon of the 4th",
-      "completed": false,
+      "completed": true,
       "id": 9
     },
     {
@@ -56,6 +57,12 @@
       "title": "Go surfing",
       "day": "June 22, 2023",
       "id": 12
+    },
+    {
+      "title": "Go Fishing",
+      "day": "Today!",
+      "id": 13,
+      "completed": true
     }
   ]
 }

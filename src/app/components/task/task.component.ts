@@ -12,12 +12,27 @@ import { UiService } from 'src/app/services/ui.service';
 
 export class TaskComponent {
   tasks: Task[] = [];
+  sortedTasks: Task[] = []  // Initialize the sortedTasks property as an empty array
 
+  sortTasks() {
+    this.sortedTasks = this.tasks.slice();
+    console.log(this.sortedTasks, 'its empty');
+    this.sortedTasks.sort((a, b) => {
+      if (a.completed && !b.completed) {
+        return 1; // Move completed task to the end
+      } else if (!a.completed && b.completed) {
+        return -1; // Move completed task to the end
+      } else {
+        return 0; // Maintain the current order for other tasks
+      }
+    });
+  }
   constructor(private taskService: TaskService, private uiService: UiService){}
 
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((tasks) => {
       this.tasks = tasks;
+      this.sortTasks();
     });
   };
 
@@ -32,6 +47,7 @@ export class TaskComponent {
     task.day = task.day;
     task.completed = task.completed;
     this.taskService.updateTask(task).subscribe();
+    this.sortTasks();
   }
 
   deleteTask(task:Task) {
