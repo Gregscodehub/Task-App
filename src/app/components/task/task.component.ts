@@ -15,8 +15,9 @@ export class TaskComponent {
   sortedTasks: Task[] = []  // Initialize the sortedTasks property as an empty array
 
   sortTasks() {
+    // create a copy of tasks
     this.sortedTasks = this.tasks.slice();
-    console.log(this.sortedTasks, 'its empty');
+    // sort copy by completed property
     this.sortedTasks.sort((a, b) => {
       if (a.completed && !b.completed) {
         return 1; // Move completed task to the end

@@ -32,11 +32,9 @@ export class TaskItemComponent {
   @Output() onDeleteTask = new EventEmitter<Task>();
 
   ngOnInit(): void {
-    // console.log(this.task);
     this.editedTitle = this.task.title;
     this.editedDay = this.task.day;
     this.editedCompleted = this.task.completed;
-    // console.log(this.editedTitle, this.editedDay, this.editedReminder)
   }
 
   constructor(private taskService: TaskService, private modalService: NgbModal, private router:Router){}
